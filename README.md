@@ -1,27 +1,17 @@
-# MealPlannerFe
+# Meal-Planner-Frontend
+This application is designed to be a playground for Angular Development.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
-
-## Development server
-
+## Run locally
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The application expects a Backend to be reachable.
+You can do this by having the `meal-planner` running in a docker-container with port forwarding or by port-forwarding the kubernetes service.
+The command for that is `kubectl port-forward service/meal-planner -n home 8080:8080`.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Release
+Run `distributeDockerImage-sh`. This will build the project and docker-image for arm322v7 and push it to the `08021986` repository.
 
 ## Running unit tests
-
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Code scaffolding
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
