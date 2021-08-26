@@ -1,16 +1,16 @@
-import { Ingredient } from 'src/model/ingredient';
+import { IngredientDescriptor } from 'src/model/ingredient-descriptor';
 
 export class RecipeDetail {
 	id: number
 	name: string
 	description: string
-	ingredients: Ingredient[]
+	ingredientDescriptors: IngredientDescriptor[]
 
-	constructor(id: number, name: string, description: string, ingredients: Ingredient[]){
+	constructor(id: number, name: string, description: string, ingredientDescriptors: IngredientDescriptor[]){
 		this.id = id
 		this.name = name
 		this.description = description
-		this.ingredients = ingredients
+		this.ingredientDescriptors = ingredientDescriptors
 	}
 
 }

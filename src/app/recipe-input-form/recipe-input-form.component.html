@@ -1,0 +1,49 @@
+<div [hidden]="loading">
+  <div *ngIf="recipeDetail">
+    <form class="recipe-card">
+      <mat-card class="recipe-card">
+        <mat-card-header appearance="fill">
+          <mat-card-title>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Name</mat-label>
+              <input matInput value="{{recipeDetail.name}}">
+            </mat-form-field>
+          </mat-card-title>
+          <mat-card-subtitle>
+            <mat-form-field appearance="fill">
+              <mat-label>Description</mat-label>
+              <textarea matInput>{{recipeDetail.description}}</textarea>
+            </mat-form-field>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-list-item>
+            <mat-list-item *ngFor="let ingredientDescriptor of recipeDetail.ingredientDescriptors">
+              <mat-form-field>
+                <mat-label>Amount</mat-label>
+                <input matInput type="number" value="{{ingredientDescriptor.amount}}">
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Value</mat-label>
+                <input matInput value="{{ingredientDescriptor.unit}}">
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Ingredient</mat-label>
+                <input matInput value="{{ingredientDescriptor.ingredient.name}}">
+              </mat-form-field>
+            </mat-list-item>
+            </mat-list-item>
+          <mat-list-item>
+            <button mat-button (click)="addNewIngredient()">Add Ingredient</button>
+          </mat-list-item>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="save()">Save</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </div>
+</div>
+<div [hidden]="!loading">
+  Loading
+</div>

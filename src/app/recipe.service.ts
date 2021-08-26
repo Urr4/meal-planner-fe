@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { RecipePreview } from 'src/model/recipe-preview';
 import { RecipeDetail } from 'src/model/recipe-detail';
-import { Observable, of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse  } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -15,7 +15,8 @@ export class RecipeService {
   constructor(private http: HttpClient) { }
 
   getAllRecipePreviews(): Observable<RecipePreview[]> {
-    return this.http.get<RecipePreview[]>(this.url);
+    return this.http
+      .get<RecipePreview[]>(this.url);
   }
 
   getRecipeDetailById(id: number): Observable<RecipeDetail> {

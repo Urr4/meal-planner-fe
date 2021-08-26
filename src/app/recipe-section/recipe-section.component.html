@@ -1,3 +1,6 @@
-<div>
-	<app-recipe-preview *ngFor="let recipePreview of recipePreviews" [recipePreview]="recipePreview"></app-recipe-preview>
+<div [hidden]="!loading">
+  Loading
+</div>
+<div [hidden]="loading">
+	<app-recipe-preview *ngFor="let recipePreview of recipePreviews" [recipePreview]="recipePreview" (click)="selectRecipe(recipePreview.id)"></app-recipe-preview>
 </div>
