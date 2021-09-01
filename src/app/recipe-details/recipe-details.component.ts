@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { RecipeDetail } from 'src/model/recipe-detail';
+import { IngredientDescriptor } from 'src/model/ingredient-descriptor';
 import { RecipeService } from '../recipe.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { RecipeService } from '../recipe.service';
 })
 export class RecipeDetailsComponent implements OnInit {
 
-  loading: boolean = true;
+  loading: boolean = false;
   recipeDetail?: RecipeDetail
 
   constructor(
@@ -23,9 +24,11 @@ export class RecipeDetailsComponent implements OnInit {
     this.route.params.subscribe(
       (params:Params) => this.recipeService.getRecipeDetailById(params.id).subscribe(
         recipeDetail => {
-          this.recipeDetail = recipeDetail;
-          console.log(recipeDetail);
-          this.loading = false;
+          this.loading = true
+          this.recipeDetail = recipeDetail
+          this.recipeDetail.ingredientDescriptors.forEach((desc:IngredientDescriptor) => desc.type = "update")
+          this.loading= false
+          console.log("Loaded ", this.recipeDetail)
         }
       )
     );
@@ -35,6 +38,10 @@ export class RecipeDetailsComponent implements OnInit {
     if(this.recipeDetail){
       this.router.navigate(['/recipe/edit/'+this.recipeDetail.id]);
     }
+  }
+
+  back(){
+    this.router.navigate(['/recipe']);
   }
 
 }

@@ -1,15 +1,13 @@
 import { Ingredient } from 'src/model/ingredient';
 
-export class IngredientDescriptor {
+export class IngredientDescriptorRequest {
 	id?: number
 	unit?: string
 	amount?: number
   ingredient: Ingredient
-  type: string
 
-	constructor(ingredient: Ingredient, type: string){
+	constructor(ingredient: Ingredient){
 	  this.ingredient = ingredient;
-	  this.type = type;
 	}
 
 }

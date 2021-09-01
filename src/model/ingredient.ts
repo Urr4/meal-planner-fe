@@ -1,7 +1,8 @@
 export class Ingredient {
 	id?: number
-	name?: string
+	name: string
 
-	constructor(){}
-
+	constructor(name: string){
+	  this.name = name;
+  }
 }
