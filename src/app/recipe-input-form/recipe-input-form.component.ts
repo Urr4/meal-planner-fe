@@ -45,6 +45,10 @@ export class RecipeInputFormComponent implements OnInit {
     }
   }
 
+  delete(ingredientDescriptor: IngredientDescriptor){
+    console.log("TODO");
+  }
+
   back(){
     if(this.recipeDetail){
       this.router.navigate(['/recipe/view/'+this.recipeDetail.id]);

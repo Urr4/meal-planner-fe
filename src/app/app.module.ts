@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RecipeInputFormComponent } from './recipe-input-form/recipe-input-form.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 import { IngredientDescriptorFormComponent } from './ingredient-descriptor-form/ingredient-descriptor-form.component';
+import { RecipeCreateFormComponent } from './recipe-create-form/recipe-create-form.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { IngredientDescriptorFormComponent } from './ingredient-descriptor-form/
     RecipeSectionComponent,
     RecipeInputFormComponent,
     RecipeDetailsComponent,
-    IngredientDescriptorFormComponent
+    IngredientDescriptorFormComponent,
+    RecipeCreateFormComponent
   ],
   imports: [
     FormsModule,

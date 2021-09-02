@@ -32,4 +32,8 @@ export class RecipeSectionComponent implements OnInit {
     this.router.navigate(['/recipe/view/'+id]);
   }
 
+  createNewRecipe(){
+    this.router.navigate(['/recipe/create']);
+  }
+
 }

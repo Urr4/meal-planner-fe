@@ -18,7 +18,7 @@
         </mat-card-header>
         <mat-card-content>
             <mat-list-item *ngFor="let ingredientDescriptor of recipeDetail.ingredientDescriptors">
-              <app-ingredient-descriptor-form [ingredientDescriptor]="ingredientDescriptor"></app-ingredient-descriptor-form>
+              <app-ingredient-descriptor-form [ingredientDescriptor]="ingredientDescriptor"></app-ingredient-descriptor-form><button mat-button (click)="delete(ingredientDescriptor)">Delete</button>
             </mat-list-item>
           <mat-list-item>
             <button mat-button (click)="addNewIngredient()">Add Ingredient</button>
