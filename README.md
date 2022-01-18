@@ -5,7 +5,7 @@ This application is designed to be a playground for Angular Development.
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 The application expects a Backend to be reachable.
 You can do this by having the `meal-planner` running in a docker-container with port forwarding or by port-forwarding the kubernetes service.
-The command for that is `kubectl port-forward service/meal-planner -n home 8080:8080`.
+The command for that is `kubectl port-forward service/meal-planner-be -n dev 8080:8080`.
 
 ## Release
 Run `distributeDockerImage-sh`. This will build the project and docker-image for arm322v7 and push it to the `08021986` repository.
